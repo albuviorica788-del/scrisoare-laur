@@ -1,0 +1,1237 @@
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#240207">
+<title>La mulți ani ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@500;700&family=Montserrat:wght@400;500;600;700&display=swap');
+
+:root {
+  --burgundy: #3b0710;
+  --dark: #160207;
+  --red: #711624;
+  --gold: #d4af37;
+  --gold2: #f8e9aa;
+  --paper: #fffaf0;
+  --ink: #351015;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--dark);
+}
+
+body {
+  min-height: 100dvh;
+  overflow-x: hidden;
+  color: #fff;
+  font-family: Montserrat, Arial, sans-serif;
+  background:
+    radial-gradient(circle at 50% 18%, #64111d 0, transparent 43%),
+    linear-gradient(145deg, #100104, #3b0710 55%, #160207);
+}
+
+button { font: inherit; }
+
+button:focus-visible {
+  outline: 2px solid var(--gold2);
+  outline-offset: 3px;
+}
+
+.hidden { display: none !important; }
+
+.app {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 12px;
+}
+
+.screen {
+  width: min(920px, 100%);
+  text-align: center;
+}
+
+/* INTRO CU PLICUL */
+
+.intro-title {
+  font-family: 'Alex Brush', cursive;
+  font-size: clamp(2.8rem, 8.5vw, 5.2rem);
+  font-weight: 400;
+  line-height: 1.08;
+  max-width: 850px;
+  margin: 0 auto 18px;
+  padding: 0 8px;
+  text-wrap: balance;
+  text-shadow: 0 4px 18px rgba(0,0,0,.35),
+               0 0 14px rgba(212,175,55,.2);
+}
+
+.intro-subtitle { display: none; }
+
+.intro-game {
+  position: relative;
+  width: min(700px, 94vw);
+  height: min(500px, 62vh);
+  min-height: 330px;
+  margin: auto;
+  border-radius: 24px;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 45%, rgba(255,255,255,.07), transparent 55%);
+  border: 1px solid rgba(212,175,55,.25);
+  box-shadow: inset 0 0 35px rgba(212,175,55,.04);
+}
+
+.intro-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 92%;
+  padding: 10px 16px;
+  border: 1px solid rgba(212,175,55,.35);
+  border-radius: 30px;
+  background: rgba(22,2,7,.78);
+  color: var(--gold2);
+  font-size: clamp(.7rem, 2.5vw, .85rem);
+  line-height: 1.4;
+  text-align: center;
+}
+
+.envelope-button {
+  position: absolute;
+  width: min(430px, 68vw);
+  aspect-ratio: 1.65 / 1;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  filter: drop-shadow(0 22px 25px rgba(0,0,0,.5));
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  transition: left .25s ease, top .25s ease, filter .2s;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.envelope-button.catchable {
+  filter: drop-shadow(0 0 18px rgba(212,175,55,.6));
+  animation: envelopeTease .8s ease-in-out infinite alternate;
+}
+
+@keyframes envelopeTease {
+  from { scale: 1; }
+  to { scale: 1.045; }
+}
+
+.envelope {
+  position: absolute;
+  inset: 0;
+  border-radius: 9px;
+  background: linear-gradient(145deg,#711624,#3b0710);
+  border: 2px solid rgba(212,175,55,.72);
+  overflow: hidden;
+}
+
+.envelope:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg,transparent 49.5%,rgba(212,175,55,.3) 50%,transparent 50.5%),
+    linear-gradient(45deg,transparent 49.5%,rgba(212,175,55,.25) 50%,transparent 50.5%);
+}
+
+.flap {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 55%;
+  background: #5a0d18;
+  clip-path: polygon(0 0,100% 0,50% 100%);
+  border-top: 1px solid rgba(212,175,55,.5);
+  transform-origin: top;
+  transition: transform .7s ease;
+}
+
+.envelope.open .flap { transform: rotateX(180deg); }
+
+.seal {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle,#a71930,#5b0b16);
+  border: 3px solid var(--gold);
+  box-shadow: 0 5px 15px rgba(0,0,0,.35);
+  font-size: 1.7rem;
+  transition: opacity .3s;
+}
+
+.envelope.open .seal { opacity: 0; }
+
+/* SCRISOAREA */
+
+.letter-wrap {
+  width: min(850px,100%);
+  margin: auto;
+}
+
+.paper {
+  background: var(--paper);
+  color: var(--ink);
+  border: 7px solid #c7ad7c;
+  border-radius: 4px;
+  box-shadow: 0 25px 55px rgba(0,0,0,.5);
+  overflow: hidden;
+}
+
+.paper-inner {
+  padding: clamp(22px,5vw,52px);
+  min-height: 610px;
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  display: none;
+  animation: pageIn .42s ease;
+}
+
+.page.active { display: block; }
+
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* PAGINA 1 */
+
+.page1 {
+  min-height: 500px;
+  text-align: left;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.page1.active { display: flex; }
+
+.small-label {
+  text-align: center;
+  font-family: Cinzel,serif;
+  letter-spacing: .18em;
+  font-size: .72rem;
+  color: #896d1d;
+  margin-bottom: 25px;
+}
+
+.letter-title {
+  font-family: 'Alex Brush',cursive;
+  font-size: clamp(3rem,9vw,5.5rem);
+  font-weight: 400;
+  text-align: center;
+  color: var(--burgundy);
+  line-height: 1;
+  margin: 0 0 28px;
+}
+
+.letter-text {
+  font-family: Georgia,serif;
+  font-size: clamp(1rem,2vw,1.15rem);
+  line-height: 1.9;
+  max-width: 680px;
+  margin: auto;
+}
+
+.letter-text p { margin: 0 0 20px; }
+
+.letter-text strong {
+  font-weight: 700;
+  color: #711624;
+}
+
+.signature {
+  font-family: 'Alex Brush',cursive;
+  font-size: 2.3rem;
+  text-align: right;
+  color: var(--burgundy);
+  margin-top: 22px;
+}
+
+/* PAGINA 2: TORTUL */
+
+.birthday {
+  text-align: center;
+  padding-top: 5px;
+}
+
+.birthday h2 {
+  font-family: 'Alex Brush',cursive;
+  color: var(--burgundy);
+  font-size: clamp(2.7rem,8vw,4.7rem);
+  margin: 0 0 4px;
+  line-height: 1.15;
+}
+
+.birthday-intro {
+  font-family: Georgia,serif;
+  color: #604c40;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  margin: 0 auto 10px;
+}
+
+.cake-area {
+  position: relative;
+  width: min(390px,88vw);
+  height: 310px;
+  margin: 4px auto 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.cake-glow {
+  position: absolute;
+  width: 270px;
+  height: 180px;
+  bottom: 25px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse,rgba(212,175,55,.22),transparent 68%);
+  filter: blur(4px);
+}
+
+.cake-svg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.cake-group {
+  transform-origin: 50% 90%;
+  animation: cakeFloat 3.5s ease-in-out infinite;
+}
+
+.cake-top { animation: cakeShine 2.4s ease-in-out infinite; }
+
+.flame {
+  transform-origin: 50% 100%;
+  animation: flameDance .55s ease-in-out infinite alternate;
+}
+
+.flame.off,
+#flame1.off,
+#flame8.off { display: none !important; }
+
+@keyframes cakeFloat {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes cakeShine {
+  0%,100% { opacity: .75; }
+  50% { opacity: 1; }
+}
+
+@keyframes flameDance {
+  from { transform: rotate(-4deg) scale(.94); }
+  to { transform: rotate(5deg) scale(1.08); }
+}
+
+.blow-btn {
+  margin-top: -4px;
+  border: 1px solid var(--gold);
+  background: var(--burgundy);
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 7px 15px rgba(0,0,0,.15);
+  transition: transform .18s,background .2s;
+}
+
+.blow-btn:hover {
+  transform: translateY(-2px);
+  background: #5a0d18;
+}
+
+.blow-btn:disabled {
+  opacity: .65;
+  cursor: default;
+  transform: none;
+}
+
+.birthday-message {
+  font-family: Georgia,serif;
+  color: var(--burgundy);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 13px auto 0;
+  max-width: 600px;
+}
+
+/* NAVIGARE INTRE CELE 2 PAGINI */
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.heart-nav {
+  width: 48px;
+  height: 48px;
+  border: 0;
+  background: var(--gold);
+  color: var(--burgundy);
+  cursor: pointer;
+  position: relative;
+  display: grid;
+  place-items: center;
+  font-size: 1.35rem;
+  box-shadow: 0 7px 16px rgba(0,0,0,.2);
+  transform: rotate(-45deg);
+  border-radius: 7px 50% 50% 50%;
+  transition: transform .18s,opacity .2s;
+}
+
+.heart-nav span {
+  transform: rotate(45deg);
+  display: block;
+}
+
+.heart-nav.next { transform: rotate(45deg); }
+.heart-nav.next span { transform: rotate(-45deg); }
+
+.heart-nav:hover:not(:disabled) {
+  transform: rotate(-45deg) scale(1.08);
+}
+
+.heart-nav.next:hover:not(:disabled) {
+  transform: rotate(45deg) scale(1.08);
+}
+
+.heart-nav:disabled {
+  opacity: .25;
+  cursor: default;
+}
+
+.page-dot {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(248,233,170,.3);
+}
+
+.dot.active {
+  background: var(--gold);
+  box-shadow: 0 0 8px rgba(212,175,55,.55);
+}
+
+.bottom-seal {
+  margin-top: 14px;
+  text-align: center;
+}
+
+.seal-btn {
+  border: 1px solid #b78b22;
+  border-radius: 999px;
+  padding: 11px 22px;
+  background: #fffaf0;
+  color: var(--burgundy);
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(50,20,10,.12);
+  transition: transform .2s,opacity .25s;
+}
+
+.seal-btn:hover { transform: translateY(-2px); }
+
+/* INIMIOARE SI CONFETTI */
+
+.hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 40;
+}
+
+.heart {
+  position: absolute;
+  bottom: -70px;
+  color: #ffb7c8;
+  text-shadow: 0 0 14px rgba(255,100,145,.5);
+  animation: heartUp linear forwards;
+  opacity: 0;
+  will-change: transform;
+}
+
+@keyframes heartUp {
+  0% {
+    transform: translate3d(0,0,0) scale(.55) rotate(0);
+    opacity: 0;
+  }
+  12% { opacity: .9; }
+  55% { opacity: .7; }
+  100% {
+    transform: translate3d(var(--drift),-115vh,0) scale(1.25) rotate(32deg);
+    opacity: 0;
+  }
+}
+
+.confetti {
+  position: fixed;
+  z-index: 41;
+  top: -24px;
+  left: 50%;
+  width: 9px;
+  height: 16px;
+  pointer-events: none;
+  border-radius: 2px;
+  animation: confettiFall linear forwards;
+  will-change: transform;
+}
+
+@keyframes confettiFall {
+  to {
+    transform: translate3d(var(--x),110vh,0) rotate(760deg);
+    opacity: .9;
+  }
+}
+
+/* SIGILAREA SCRISORII */
+
+.closing-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: radial-gradient(circle at 50% 35%,#64111d,#160207 72%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .5s ease;
+}
+
+.closing-screen.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.closing-content {
+  text-align: center;
+  width: min(560px,94vw);
+  transform: translateY(20px) scale(.96);
+  transition: transform .65s cubic-bezier(.2,.8,.2,1);
+}
+
+.closing-screen.show .closing-content { transform: none; }
+
+.closing-envelope {
+  position: relative;
+  width: min(480px,88vw);
+  aspect-ratio: 1.65 / 1;
+  margin: auto;
+  border-radius: 9px;
+  background: linear-gradient(145deg,#711624,#3b0710);
+  border: 2px solid rgba(212,175,55,.75);
+  box-shadow: 0 25px 60px rgba(0,0,0,.55);
+  overflow: hidden;
+}
+
+.closing-envelope:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg,transparent 49.5%,rgba(212,175,55,.3) 50%,transparent 50.5%),
+    linear-gradient(45deg,transparent 49.5%,rgba(212,175,55,.25) 50%,transparent 50.5%);
+}
+
+.closing-flap {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 55%;
+  background: #5a0d18;
+  clip-path: polygon(0 0,100% 0,50% 100%);
+  border-top: 1px solid rgba(212,175,55,.5);
+  transform-origin: top;
+  transform: rotateX(180deg);
+  transition: transform .9s cubic-bezier(.2,.7,.2,1);
+}
+
+.closing-envelope.sealed .closing-flap { transform: rotateX(0); }
+
+.closing-seal {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%) scale(0);
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle,#a71930,#5b0b16);
+  border: 3px solid var(--gold);
+  box-shadow: 0 5px 20px rgba(0,0,0,.4);
+  font-size: 1.7rem;
+  transition: transform .45s cubic-bezier(.2,1.4,.4,1);
+  transition-delay: .75s;
+}
+
+.closing-envelope.sealed .closing-seal {
+  transform: translate(-50%,-50%) scale(1);
+}
+
+.closing-title {
+  font-family: Cinzel,serif;
+  letter-spacing: .12em;
+  color: var(--gold2);
+  font-size: clamp(1.2rem,5vw,2rem);
+  margin: 25px 0 8px;
+}
+
+.closing-text {
+  color: #fff5dd;
+  margin: 0 auto;
+  line-height: 1.7;
+  font-family: Georgia,serif;
+  max-width: 480px;
+}
+
+.restart-btn {
+  margin-top: 20px;
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: #fff;
+  padding: 11px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background .2s,transform .2s;
+}
+
+.restart-btn:hover {
+  background: rgba(212,175,55,.16);
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVE */
+
+@media (max-width:600px) {
+  .app { padding: 10px 7px; }
+
+  .intro-game {
+    width: 96vw;
+    height: 65vh;
+    min-height: 310px;
+  }
+
+  .envelope-button { width: min(390px,72vw); }
+
+  .seal {
+    width: 60px;
+    height: 60px;
+    font-size: 1.4rem;
+  }
+
+  .paper { border-width: 4px; }
+
+  .paper-inner {
+    padding: 19px 14px;
+    min-height: 590px;
+  }
+
+  .page1 { min-height: calc(100dvh - 185px); }
+
+  .letter-text {
+    line-height: 1.72;
+    font-size: .97rem;
+  }
+
+  .controls { gap: 15px; }
+
+  .heart-nav {
+    width: 43px;
+    height: 43px;
+    font-size: 1.2rem;
+  }
+
+  .cake-area { height: 270px; }
+  .birthday h2 { font-size: 3.2rem; }
+  .birthday-intro { font-size: .94rem; }
+  .closing-envelope { width: 88vw; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *:before, *:after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="app">
+
+  <!-- INTRO -->
+  <section class="screen" id="introScreen" aria-label="Jocul de deschidere">
+    <h1 class="intro-title">O mică surpriză pentru ziua ta ❤️</h1>
+    <p class="intro-subtitle">O mică surpriză pentru ziua ta ❤️</p>
+
+    <div class="intro-game" id="introGame">
+      <button class="envelope-button" id="openEnvelope" type="button" aria-label="Prinde plicul">
+        <span class="envelope" id="envelope">
+          <span class="flap"></span>
+          <span class="seal">♥</span>
+        </span>
+      </button>
+
+      <div class="intro-hint" id="introHint">Prinde plicul ca să-l deschizi ✨</div>
+    </div>
+  </section>
+
+  <!-- SCRISOAREA CU 2 PAGINI -->
+  <section class="screen letter-wrap hidden" id="letterScreen" aria-label="Scrisoare aniversară">
+    <div class="paper">
+      <div class="paper-inner">
+
+        <!-- PAGINA 1: FELICITAREA -->
+        <article class="page page1 active" id="page1">
+          <div class="small-label">O SCRISOARE PENTRU TINE</div>
+          <h2 class="letter-title">La mulți ani Laur!</h2>
+
+          <div class="letter-text">
+            <p>Astăzi este despre tine și despre toate lucrurile frumoase care te așteaptă.</p>
+
+            <p>Îți doresc din suflet să ai parte de <strong>oameni de încredere</strong> alături, de momente pe care să nu le uiți niciodată și de curajul de a merge mereu spre ceea ce îți dorești cu adevărat.</p>
+
+            <p>Să dea Domnul ca viața să-ți aducă mereu motive să zâmbești și să nu uiți nicio clipă cât de important ești pentru cei care te iubesc.</p>
+
+            <p>Să fie începutul unui capitol superb din viața ta!</p>
+          </div>
+
+          <div class="signature">Cu drag, Valeria ❤️</div>
+        </article>
+
+        <!-- PAGINA 2: TORTUL -->
+        <article class="page birthday" id="page2">
+          <h2>La mulți ani, 18!</h2>
+          <p class="birthday-intro">Închide ochii… și păstrează-ți dorința doar pentru tine. ✨</p>
+
+          <div class="cake-area" aria-label="Tort aniversar cu lumânările 1 și 8">
+            <div class="cake-glow"></div>
+
+            <svg class="cake-svg" viewBox="0 0 390 310" role="img" aria-label="Tort aniversar">
+              <g class="cake-group">
+                <ellipse cx="195" cy="275" rx="128" ry="18" fill="#d4af37" opacity=".22"/>
+
+                <path d="M83 196 Q83 180 99 174 L291 174 Q307 180 307 196 L298 259 Q296 270 282 273 L108 273 Q94 270 92 259Z"
+                  fill="#7b1524" stroke="#c5a66b" stroke-width="3"/>
+
+                <path d="M92 190 Q102 177 116 184 Q128 194 140 184 Q152 174 164 184 Q177 194 190 184 Q203 174 216 184 Q229 194 242 184 Q255 174 268 184 Q281 194 298 185 Q306 189 307 197 L298 215 Q284 207 270 216 Q256 225 242 215 Q228 205 214 215 Q200 225 186 215 Q172 205 158 215 Q144 225 130 215 Q116 205 102 215 Q96 211 92 204Z"
+                  fill="#fff5df" stroke="#d4af37" stroke-width="2" class="cake-top"/>
+
+                <path d="M93 218 Q109 208 125 218 Q141 228 157 218 Q173 208 189 218 Q205 228 221 218 Q237 208 253 218 Q269 228 285 218 Q294 213 300 218 L298 257 Q296 268 282 271 L108 271 Q94 268 92 257Z"
+                  fill="#f4d8b5"/>
+
+                <path d="M98 225 Q111 216 124 225 Q137 234 150 225 Q163 216 176 225 Q189 234 202 225 Q215 216 228 225 Q241 234 254 225 Q267 216 280 225 Q290 232 298 226"
+                  fill="none" stroke="#c51f42" stroke-width="7" stroke-linecap="round"/>
+
+                <circle cx="130" cy="246" r="5" fill="#d4af37"/>
+                <circle cx="195" cy="250" r="5" fill="#d4af37"/>
+                <circle cx="260" cy="246" r="5" fill="#d4af37"/>
+
+                <!-- LUMANAREA 1 -->
+                <g id="candle1">
+                  <rect x="137" y="124" width="34" height="67" rx="7" fill="#fff2c8" stroke="#d4af37" stroke-width="3"/>
+                  <path d="M145 130v54M157 130v54" stroke="#a71930" stroke-width="4" opacity=".65"/>
+                  <text x="154" y="174" text-anchor="middle" font-family="Cinzel,serif" font-size="34" font-weight="700" fill="#3b0710">1</text>
+
+                  <g id="flame1">
+                    <path class="flame" d="M154 119 C141 104 153 92 157 82 C168 98 169 108 158 119Z" fill="#ff9f1c" stroke="#ffd66b" stroke-width="2"/>
+                    <path d="M155 110 C151 103 155 98 158 94 C162 102 162 107 158 111Z" fill="#fff5b0"/>
+                  </g>
+                </g>
+
+                <!-- LUMANAREA 8 -->
+                <g id="candle8">
+                  <rect x="219" y="124" width="34" height="67" rx="7" fill="#fff2c8" stroke="#d4af37" stroke-width="3"/>
+                  <path d="M227 130v54M239 130v54" stroke="#a71930" stroke-width="4" opacity=".65"/>
+                  <text x="236" y="174" text-anchor="middle" font-family="Cinzel,serif" font-size="34" font-weight="700" fill="#3b0710">8</text>
+
+                  <g id="flame8">
+                    <path class="flame" d="M236 119 C223 104 235 92 239 82 C250 98 251 108 240 119Z" fill="#ff9f1c" stroke="#ffd66b" stroke-width="2"/>
+                    <path d="M237 110 C233 103 237 98 240 94 C244 102 244 107 240 111Z" fill="#fff5b0"/>
+                  </g>
+                </g>
+
+                <path d="M104 176 Q195 145 286 176" fill="none" stroke="#fffaf0" stroke-width="4" opacity=".7"/>
+              </g>
+            </svg>
+          </div>
+
+          <button class="blow-btn" id="blowBtn" type="button">Stinge lumânările 🎂✨</button>
+          <p class="birthday-message hidden" id="birthdayMessage">Dorința ta să se împlinească. ❤️ La mulți ani!</p>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- SAGETI SI 2 INDICATOARE -->
+    <div class="controls" aria-label="Navigare între pagini">
+      <button class="heart-nav" id="prevBtn" type="button" aria-label="Pagina anterioară">
+        <span>‹</span>
+      </button>
+
+      <div class="page-dot" aria-hidden="true">
+        <i class="dot active"></i>
+        <i class="dot"></i>
+      </div>
+
+      <button class="heart-nav next" id="nextBtn" type="button" aria-label="Pagina următoare">
+        <span>›</span>
+      </button>
+    </div>
+
+    <div class="bottom-seal">
+      <button class="seal-btn hidden" id="sealBtn" type="button">Sigilează scrisoarea 💌</button>
+    </div>
+  </section>
+</div>
+
+<div class="hearts" id="hearts" aria-hidden="true"></div>
+
+<!-- ECRANUL FINAL -->
+<div class="closing-screen" id="closingScreen" aria-hidden="true">
+  <div class="closing-content">
+    <div class="closing-envelope" id="closingEnvelope">
+      <div class="closing-flap"></div>
+      <div class="closing-seal">♥</div>
+    </div>
+
+    <h2 class="closing-title">Scrisoarea a fost sigilată</h2>
+    <p class="closing-text">Unele lucruri frumoase merită păstrate pentru totdeauna. ❤️</p>
+    <button class="restart-btn" id="restartBtn" type="button">Înapoi la început 💌</button>
+  </div>
+</div>
+
+<script>
+'use strict';
+
+const introScreen = document.getElementById('introScreen');
+const introGame = document.getElementById('introGame');
+const introHint = document.getElementById('introHint');
+const openEnvelope = document.getElementById('openEnvelope');
+const envelope = document.getElementById('envelope');
+const letterScreen = document.getElementById('letterScreen');
+
+const pages = [
+  document.getElementById('page1'),
+  document.getElementById('page2')
+];
+
+const dots = [...document.querySelectorAll('.dot')];
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const blowBtn = document.getElementById('blowBtn');
+const birthdayMessage = document.getElementById('birthdayMessage');
+const sealBtn = document.getElementById('sealBtn');
+
+const closingScreen = document.getElementById('closingScreen');
+const closingEnvelope = document.getElementById('closingEnvelope');
+const restartBtn = document.getElementById('restartBtn');
+const hearts = document.getElementById('hearts');
+
+let currentPage = 1;
+let opened = false;
+let blown = false;
+let attempts = 0;
+let audioContext = null;
+let touchStartX = null;
+let envelopeMoving = false;
+
+const MAX_DODGES = 4;
+
+/* SUNETE */
+
+function sound(frequency = 440, duration = 0.12) {
+  try {
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return;
+
+    if (!audioContext) audioContext = new AC();
+
+    if (audioContext.state === 'suspended') {
+      audioContext.resume().catch(() => {});
+    }
+
+    const oscillator = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+
+    oscillator.frequency.value = frequency;
+    oscillator.type = 'sine';
+
+    gain.gain.setValueAtTime(0.04, audioContext.currentTime);
+    gain.gain.exponentialRampToValueAtTime(
+      0.001,
+      audioContext.currentTime + duration
+    );
+
+    oscillator.connect(gain);
+    gain.connect(audioContext.destination);
+
+    oscillator.start();
+    oscillator.stop(audioContext.currentTime + duration);
+  } catch (error) {
+    // Sunetul este opțional.
+  }
+}
+
+/* INIMIOARE */
+
+function makeHearts(amount = 24) {
+  for (let i = 0; i < amount; i++) {
+    const heart = document.createElement('span');
+
+    heart.className = 'heart';
+    heart.textContent = Math.random() > 0.22 ? '♥' : '♡';
+    heart.style.left = Math.random() * 100 + '%';
+    heart.style.fontSize = (24 + Math.random() * 34) + 'px';
+    heart.style.setProperty('--drift', (Math.random() * 180 - 90) + 'px');
+    heart.style.animationDuration = (5 + Math.random() * 5) + 's';
+    heart.style.animationDelay = Math.random() * 1.8 + 's';
+
+    hearts.appendChild(heart);
+    heart.addEventListener('animationend', () => heart.remove(), { once: true });
+  }
+}
+
+/* CONFETTI */
+
+function makeConfetti(amount = 70) {
+  const colors = ['#d4af37', '#f8e9aa', '#a71930', '#ff8fab', '#fff5df'];
+
+  for (let i = 0; i < amount; i++) {
+    const piece = document.createElement('span');
+
+    piece.className = 'confetti';
+    piece.style.left = (45 + Math.random() * 10) + '%';
+    piece.style.setProperty('--x', (Math.random() * 90 - 45) + 'vw');
+    piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+    piece.style.animationDuration = (2.7 + Math.random() * 2.3) + 's';
+    piece.style.animationDelay = Math.random() * 1.2 + 's';
+
+    document.body.appendChild(piece);
+    piece.addEventListener('animationend', () => piece.remove(), { once: true });
+  }
+}
+
+function celebrate(amount = 34) {
+  makeHearts(amount);
+  makeConfetti(78);
+}
+
+/* JOCUL CU PLICUL */
+
+function moveEnvelope() {
+  if (opened || envelopeMoving || attempts >= MAX_DODGES) return;
+
+  envelopeMoving = true;
+
+  const gameWidth = introGame.clientWidth;
+  const gameHeight = introGame.clientHeight;
+  const envelopeWidth = openEnvelope.offsetWidth;
+  const envelopeHeight = openEnvelope.offsetHeight;
+  const padding = 12;
+
+  const maxX = Math.max(padding, gameWidth - envelopeWidth - padding);
+  const maxY = Math.max(padding, gameHeight - envelopeHeight - padding - 48);
+
+  let x = padding + Math.random() * Math.max(0, maxX - padding);
+  let y = padding + Math.random() * Math.max(0, maxY - padding);
+
+  const oldX = parseFloat(openEnvelope.style.left);
+  const oldY = parseFloat(openEnvelope.style.top);
+
+  if (
+    Number.isFinite(oldX) &&
+    Number.isFinite(oldY) &&
+    Math.abs(x - oldX) < envelopeWidth * 0.35 &&
+    Math.abs(y - oldY) < envelopeHeight * 0.35
+  ) {
+    x = padding + (
+      x + envelopeWidth / 2 < gameWidth / 2
+        ? Math.max(0, maxX - padding)
+        : 0
+    );
+
+    y = padding + (
+      y + envelopeHeight / 2 < gameHeight / 2
+        ? Math.max(0, maxY - padding)
+        : 0
+    );
+  }
+
+  openEnvelope.style.left = x + 'px';
+  openEnvelope.style.top = y + 'px';
+  openEnvelope.style.transform = 'none';
+
+  attempts++;
+
+  const messages = [
+    'Ups! Plicul a fugit! 😈 Mai încearcă!',
+    'Haha, aproape l-ai prins! 😂❤️',
+    'Nu renunța acum! Plicul te provoacă! 💌',
+    'Ultima încercare… Acum îl poți prinde! ✨'
+  ];
+
+  introHint.textContent = messages[Math.min(attempts - 1, messages.length - 1)];
+
+  if (attempts >= MAX_DODGES) {
+    openEnvelope.classList.add('catchable');
+    introHint.textContent = 'Acum! Prinde plicul și descoperă surpriza! ❤️';
+  }
+
+  setTimeout(() => {
+    envelopeMoving = false;
+  }, 270);
+}
+
+function openLetter() {
+  if (opened) return;
+
+  opened = true;
+  sound(560, 0.2);
+  envelope.classList.add('open');
+  introHint.textContent = 'Surpriza ta te așteaptă… ❤️';
+
+  setTimeout(() => {
+    introScreen.classList.add('hidden');
+    letterScreen.classList.remove('hidden');
+    showPage(1);
+    celebrate(22);
+  }, 620);
+}
+
+openEnvelope.addEventListener('pointerenter', event => {
+  if (
+    event.pointerType === 'mouse' &&
+    !opened &&
+    attempts < MAX_DODGES
+  ) {
+    moveEnvelope();
+  }
+});
+
+openEnvelope.addEventListener('pointerdown', event => {
+  if (opened) return;
+
+  if (attempts < MAX_DODGES) {
+    event.preventDefault();
+    moveEnvelope();
+  } else {
+    event.preventDefault();
+    openLetter();
+  }
+});
+
+/* NAVIGARE: DOAR 2 PAGINI */
+
+function showPage(number) {
+  if (number < 1 || number > 2) return;
+
+  currentPage = number;
+
+  pages.forEach((page, index) => {
+    page.classList.toggle('active', index + 1 === number);
+  });
+
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('active', index + 1 === number);
+  });
+
+  prevBtn.disabled = number === 1;
+  nextBtn.disabled = number === 2;
+
+  sealBtn.classList.toggle('hidden', !(number === 2 && blown));
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  sound(330 + number * 65, 0.08);
+}
+
+prevBtn.addEventListener('click', () => showPage(currentPage - 1));
+nextBtn.addEventListener('click', () => showPage(currentPage + 1));
+
+/* STINGEREA LUMANARILOR */
+
+function blowCandles() {
+  if (blown) return;
+
+  blown = true;
+
+  document.getElementById('flame1').classList.add('off');
+  document.getElementById('flame8').classList.add('off');
+
+  blowBtn.disabled = true;
+  blowBtn.textContent = 'Lumânările au fost stinse ✨';
+
+  birthdayMessage.classList.remove('hidden');
+
+  sound(180, 0.25);
+  celebrate(46);
+  showPage(2);
+}
+
+blowBtn.addEventListener('click', blowCandles);
+
+document.getElementById('candle1').style.cursor = 'pointer';
+document.getElementById('candle8').style.cursor = 'pointer';
+
+document.getElementById('candle1').addEventListener('click', blowCandles);
+document.getElementById('candle8').addEventListener('click', blowCandles);
+
+/* SIGILAREA SCRISORII */
+
+function sealLetter() {
+  if (!blown) return;
+
+  sealBtn.disabled = true;
+  letterScreen.classList.add('hidden');
+
+  closingScreen.classList.add('show');
+  closingScreen.setAttribute('aria-hidden', 'false');
+
+  setTimeout(() => {
+    closingEnvelope.classList.add('sealed');
+    sound(520, 0.22);
+    makeHearts(20);
+  }, 160);
+}
+
+sealBtn.addEventListener('click', sealLetter);
+
+/* REVENIRE LA INTRO */
+
+function resetToIntro() {
+  closingScreen.classList.remove('show');
+  closingScreen.setAttribute('aria-hidden', 'true');
+  closingEnvelope.classList.remove('sealed');
+
+  letterScreen.classList.add('hidden');
+  introScreen.classList.remove('hidden');
+
+  envelope.classList.remove('open');
+  openEnvelope.classList.remove('catchable');
+
+  openEnvelope.style.left = '50%';
+  openEnvelope.style.top = '50%';
+  openEnvelope.style.transform = 'translate(-50%,-50%)';
+
+  introHint.textContent = 'Prinde plicul ca să-l deschizi ✨';
+
+  attempts = 0;
+  opened = false;
+  blown = false;
+  envelopeMoving = false;
+
+  blowBtn.disabled = false;
+  blowBtn.textContent = 'Stinge lumânările 🎂✨';
+
+  birthdayMessage.classList.add('hidden');
+
+  sealBtn.classList.add('hidden');
+  sealBtn.disabled = false;
+
+  document.getElementById('flame1').classList.remove('off');
+  document.getElementById('flame8').classList.remove('off');
+
+  showPage(1);
+  window.scrollTo(0, 0);
+}
+
+restartBtn.addEventListener('click', resetToIntro);
+
+/* TASTATURA */
+
+document.addEventListener('keydown', event => {
+  if (closingScreen.classList.contains('show')) {
+    if (event.key === 'Escape') resetToIntro();
+    return;
+  }
+
+  if (!opened) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      openLetter();
+    }
+    return;
+  }
+
+  if (event.key === 'ArrowRight') showPage(currentPage + 1);
+  if (event.key === 'ArrowLeft') showPage(currentPage - 1);
+});
+
+/* GLISARE PE TELEFON */
+
+document.addEventListener('touchstart', event => {
+  if (!opened || event.touches.length !== 1) return;
+  touchStartX = event.touches[0].clientX;
+}, { passive: true });
+
+document.addEventListener('touchend', event => {
+  if (!opened || touchStartX === null || event.changedTouches.length !== 1) return;
+
+  const distance = event.changedTouches[0].clientX - touchStartX;
+  touchStartX = null;
+
+  if (Math.abs(distance) < 55) return;
+
+  if (distance < 0) {
+    showPage(currentPage + 1);
+  } else {
+    showPage(currentPage - 1);
+  }
+}, { passive: true });
+
+showPage(1);
+</script>
+</body>
+</html>
